@@ -1,0 +1,71 @@
+.date-picker {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .toggle-view {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .toggle-view:hover {
+    background-color: #e6351a;
+  }
+  
+  .date-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .date-form label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .date-form input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .date-form button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .date-form button:hover {
+    background-color: #0a2e6b;
+  }
+  
+  .range-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .range-inputs > div {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .range-inputs {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

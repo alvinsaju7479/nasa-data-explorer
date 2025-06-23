@@ -1,0 +1,66 @@
+.apod-viewer {
+    margin-top: 2rem;
+  }
+  
+  .apod-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .apod-container h2 {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin: 0;
+  }
+  
+  .apod-media {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .apod-details {
+    padding: 1rem;
+  }
+  
+  .apod-details p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .apod-range-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .range-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  .range-navigation button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .range-navigation button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .range-navigation span {
+    font-weight: bold;
+  }
