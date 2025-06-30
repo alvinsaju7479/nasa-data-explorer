@@ -15,19 +15,17 @@ function App() {
   });
   const [viewMode, setViewMode] = useState('single');
 
-  // API base URL configuration
-  const API_BASE_URL = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:5000/api/apod' 
-    : '/api/apod';
+  // ✅ Use correct environment variable for API base URL
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const fetchApodData = async (date = '', startDate = '', endDate = '') => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      let url = API_BASE_URL;
+      let url = `${API_BASE_URL}/api/apod`;
       const params = new URLSearchParams();
-      
+
       if (date) {
         params.append('date', date);
       } else if (startDate && endDate) {
@@ -35,21 +33,19 @@ function App() {
         params.append('end_date', endDate);
       }
 
-      // Only append params if they exist
       if (params.toString()) {
         url += `?${params.toString()}`;
       }
 
       const response = await fetch(url);
-      
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      
-      // Validate API response structure
+
       if (!data || (Array.isArray(data) && data.length === 0)) {
         throw new Error('No data available for the selected date range');
       }
@@ -91,12 +87,9 @@ function App() {
   const toggleViewMode = () => {
     const newMode = viewMode === 'single' ? 'range' : 'single';
     setViewMode(newMode);
-    
-    // Reset to today's image when switching modes
-    if (newMode === 'single') {
-      const today = new Date().toISOString().split('T')[0];
-      fetchApodData(today);
-    }
+
+    const today = new Date().toISOString().split('T')[0];
+    fetchApodData(today);
   };
 
   const handleRetry = () => {
