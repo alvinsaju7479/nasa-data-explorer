@@ -48,10 +48,9 @@ Backend (Render)
 - Import GitHub repo
 - Set build: npm install, start: node server.js
 - Add env: NASA_API_KEY=your_key
-- Copy backend URL (e.g. https://nasabackend1.onrender.com)
 Frontend (Vercel)
 - Import frontend repo
-- Add env: VITE_API_BASE_URL=https://nasabackend1.onrender.com
+
 - Vercel autodeploys and hosts frontend
 API Endpoint
 GET /api/apod
